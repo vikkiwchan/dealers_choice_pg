@@ -1,0 +1,12 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.selected {
+  background-color: royalblue;
+}
