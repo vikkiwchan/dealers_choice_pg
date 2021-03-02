@@ -1,5 +1,28 @@
 const pg = require('pg');
-const client = new pg.Client('postgres://localhost/thecrown_db');
+//const client = new pg.Client('postgres://localhost/thecrown_db');
+let config;
+if (process.env.DATABASE_URL) {
+  config = {
+    logging: false,
+    operatorsAliases: false,
+    dialect: 'postgres',
+    protocol: 'postgres',
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+  };
+} else {
+  config = {
+    logging: false,
+    operatorsAliases: false,
+  };
+}
+
+const client = new pg.Client('postgres://localhost/thecrown_db', config);
 
 const syncAndSeed = async () => {
   const SQL = `
