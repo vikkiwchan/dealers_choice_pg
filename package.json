@@ -5,27 +5,26 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "build:dev": "npm run build -- --mode=development --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon server.js --ignore dist/ --ignore src/ & npm run build:dev",
-    "start": "node server.js & npm run build"
+    "build:dev": "npm run build -- --watch --mode=development",
+    "start:dev": "npm run build:dev & nodemon server --ignore src/ --ignore dist/",
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "pg": "^8.5.1",
-    "webpack": "^5.24.2",
-    "webpack-cli": "^4.5.0",
-    "babel-loader": "^8.2.2",
-    "@babel/core": "^7.13.8",
-    "@babel/preset-react": "^7.12.13"
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-react": "^7.12.13"
   }
 }
