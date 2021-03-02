@@ -11,9 +11,11 @@ app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/api/episodes', async (req, res, next) => {
+app.get('/api/episodes/:seasonId', async (req, res, next) => {
   try {
-    const response = await client.query('SELECT * FROM "Episodes";');
+    const response = await client.query(
+      `SELECT * FROM "Episodes" WHERE season_id = ${req.params.seasonId};`
+    );
     res.send(response.rows);
   } catch (err) {
     next(err);

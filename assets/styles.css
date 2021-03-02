@@ -1,12 +1,22 @@
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 1rem;
+  color: violet;
+  background-image: url('wp2416942-the-crown-wallpapers.jpg');
 }
 
 ul {
-  list-style: none;
+  list-style: square;
 }
 
 .selected {
   background-color: royalblue;
+}
+
+.selected a {
+  color: white;
+}
+
+a {
+  color: violet;
 }

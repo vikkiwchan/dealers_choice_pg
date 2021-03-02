@@ -3,9 +3,13 @@ import SingleSeason from './SingleSeason';
 
 const SeasonList = (props) => {
   const { seasons, selectedSeasonId } = props;
-  //console.log('called from Season List', props);
+  //console.log('ooooo called from SeasonList:', props);
   return seasons.map((season) => (
-    <SingleSeason key={season.id} season={season} seasonId={selectedSeasonId} />
+    <SingleSeason
+      key={season.id}
+      season={season}
+      selectedSeasonId={selectedSeasonId}
+    />
   ));
 };
 
