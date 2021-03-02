@@ -25,7 +25,6 @@ class App extends Component {
   }
   render() {
     const { seasons, selectedSeasonId } = this.state;
-    //console.log('----called from render():', this.state);
     return (
       <div id='lists'>
         <div id='season-list'>
