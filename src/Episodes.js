@@ -25,7 +25,6 @@ class Episodes extends Component {
   async componentDidMount() {
     try {
       const { selectedSeasonId } = this.props;
-      //console.log('|||||| -- called from Episodes:', this.props);
       const episodes = (await axios.get(`/api/episodes/${selectedSeasonId}`))
         .data;
       this.setState({ episodes });
