@@ -14,7 +14,8 @@ app.get('/', (req, res, next) => {
 app.get('/api/episodes/:seasonId', async (req, res, next) => {
   try {
     const response = await client.query(
-      `SELECT * FROM "Episodes" WHERE season_id = ${req.params.seasonId};`
+      `SELECT * FROM "Episodes" WHERE season_id = $1;`,
+      [req.params.seasonId]
     );
     res.send(response.rows);
   } catch (err) {
